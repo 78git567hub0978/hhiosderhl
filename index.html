@@ -21,7 +21,30 @@
     * {
       box-sizing: border-box;
     }
+<div id="login">
+  <h2>Enter password</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Login</button>
+  <p id="message"></p>
+</div>
 
+<div id="website" style="display: none;">
+  <h1>Welcome to my website!</h1>
+  <p>This is my private content.</p>
+</div>
+
+<script>
+  function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "nice091289nice") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("website").style.display = "block";
+    } else {
+      document.getElementById("message").innerText = "Wrong password.";
+    }
+  }
+</script>
     body {
       margin: 0;
       height: 100vh;
